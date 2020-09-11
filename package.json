@@ -1,0 +1,34 @@
+{
+  "name": "from-each-according-to-their-ability",
+  "version": "1.0.0",
+  "description": "a chore splitting app",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.5",
+    "node": "^14.8.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.3",
+    "sqlite3": "^5.0.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon index.js --trace-warnings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtopham/from-each-according-to-their-ability.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vtopham/from-each-according-to-their-ability/issues"
+  },
+  "homepage": "https://github.com/vtopham/from-each-according-to-their-ability#readme"
+}
