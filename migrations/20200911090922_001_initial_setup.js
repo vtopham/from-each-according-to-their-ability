@@ -65,6 +65,10 @@ exports.up = function(knex) {
         .notNullable()
         .references('id')
         .inTable('users');
+      tbl.integer('household_id')
+        .notNullable()
+        .references('id')
+        .inTable('households')
   })
 };
 

@@ -1,4 +1,4 @@
-const { RSA_NO_PADDING } = require('constants');
+
 const express = require('express');
 const bcrypt = require('bcryptjs')
 const Users = require('./usersModel')
@@ -57,7 +57,11 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     const userData = req.body
     const id = req.params.id
-    //TODO: encrypt password if included
+
+    if (userData.password) {
+        userData.password = bcrypt.hashSync(userData.password)
+    }
+    
     Users.updateUser(id, userData)
         .then( _ => {
             Users.getUserById(id)

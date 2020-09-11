@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('chore_events').insert([
-        {id: 1, completed_date: new Date(), completed_by_id: 1, chore_id: 1}
+        {id: 1, completed_date: new Date(), completed_by_id: 1, chore_id: 1, household_id: 1}
       ]);
     });
 };
