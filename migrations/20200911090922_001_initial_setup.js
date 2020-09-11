@@ -8,6 +8,8 @@ exports.up = function(knex) {
       tbl.string('first_name')
         .notNullable();
       tbl.string('last_name');
+      tbl.string('password')
+        .notNullable();
   })
   //invite code is null until the admin generates one
   .createTable('households', tbl => {
