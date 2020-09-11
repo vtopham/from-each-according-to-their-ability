@@ -53,6 +53,10 @@ exports.up = function(knex) {
   //keep track of who's doing chores when
   .createTable('chore_events', tbl => {
       tbl.increments('id');
+      tbl.integer('chore_id')
+        .references('id')
+        .inTable('chores')
+        .notNullable();
       tbl.date('completed_date')
         .notNullable();
       tbl.integer('completed_by_id')
@@ -65,9 +69,13 @@ exports.up = function(knex) {
 //TODO: cascades to drop users when somebody moves out
 exports.down = function(knex) {
   return knex.schema    
-    .dropTableIfExists('users')
-    .dropTableIfExists('households')
-    .dropTableIfExists('rooms')
-    .dropTableIfExists('chores')
+    
+    
+    
+    
     .dropTableIfExists('chore_events')
+    .dropTableIfExists('chores')
+    .dropTableIfExists('rooms')
+    .dropTableIfExists('households')
+    .dropTableIfExists('users')
 };
